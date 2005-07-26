@@ -13,19 +13,25 @@ deg2num(x)
 }
 \value{Numeric representation of the degree string(s).}
 \note{
-  The string format is adopted from Appendix B.1.1 in the GMT manual.
+  The string format is adopted from \cite{Appendix B.1.1} in the
+  \acronym{GMT} manual.
 }
 \author{Arni Magnusson \email{arnima@u.washington.edu}.}
 \seealso{
-  \code{\link{as.numeric}}.
+  \code{\link{as.numeric}} converts strings to numbers when things are
+  straightforward.
+
+  \code{deg2num} is the opposite of \code{\link{num2deg}}.
 
   \code{\link{gmt-package}} gives an overview of the package.
 }
 \examples{
+# The opposite of num2deg() example
 deg2num(c("12:30:44.5W", "17.5S", "1:00:05", "200:45E"))
 }
 % Basics
-\keyword{classes}
 \keyword{character}
 % Mathematics
 \keyword{arith}
+% MASS
+\keyword{spatial}

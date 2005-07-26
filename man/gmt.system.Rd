@@ -1,8 +1,9 @@
 \name{gmt.system}
 \alias{gmt.system}
-\title{Invoke GMT system command}
+\title{Invoke shell command}
 \description{
-  Invoke a system command, possibly directing the output to a file.
+  This internal function invokes a shell command, possibly directing the
+  output to a file.
 }
 \usage{
 gmt.system(cmd, file=NULL, append=FALSE)
@@ -14,9 +15,11 @@ gmt.system(cmd, file=NULL, append=FALSE)
 }
 \value{Command output as a vector of strings.}
 \note{
-  This function is primarily an internal function, but users may find it
-  handy for their own plotting functions. It is platform-independent,
-  unlike the \code{shell} function.
+  \code{gmt.system} is a fast platform-independent wrapper for
+  \code{system}, supporting redirection to file.
+
+  It is mainly called by other functions, but users may find it useful
+  for running various \acronym{GMT} commands.
 }
 \author{Arni Magnusson \email{arnima@u.washington.edu}.}
 \seealso{
@@ -26,8 +29,10 @@ gmt.system(cmd, file=NULL, append=FALSE)
 }
 \examples{
 \dontrun{
-## Assuming that GMT is in path
 gmt.system("gmtdefaults -Ds", file=".gmtdefaults4")
+
+# Assuming bermuda.nc is in R working directory
+gmt.system("grdcontour bermuda.nc -JM7i -C250 -A1000 -B2", file="b.eps")
 }
 }
 % Programming

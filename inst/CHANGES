@@ -1,11 +1,44 @@
 --------------------------------------------------------------------------------
+gmt 1.1-0
+29 Jul 2007
+--------------------------------------------------------------------------------
+o New function num2deg() converts numeric to degrees, the opposite of num2deg().
+
+o gmt() is quiet=TRUE by default, and creates files .gmtcommands4 and
+  .gmtdefaults4 in dirname(file) instead of R working directory.
+
+o psxy(), pstext(), and psbar() save temporary GMT input files in directory
+  dirname(tempdir()) instead of R working directory. These temporary files are
+  later removed by psclose().
+
+o psclose() moves the bounding box declaration to the postscript file header,
+  and removes GMT input files from temporary directory. If cleanup=TRUE, the
+  files .gmtcommands4 and .gmtdefaults4 are also removed.
+
+o r2gmt() reads correctly a table whose header starts with #.
+
+o example directory contains scripts (example.bat, example.sh) that mimic the
+  behaviour of the 'gmt' package, with the input files stored in a tmp
+  subdirectory.
+
+o Main example and demo.* objects revised.
+
+o pscoast() example demonstrates how a map could be drawn without gmt() and
+  psclose().
+
+o gmt.system() example demonstrates how any GMT command can be run from R.
+
+
+
+
+--------------------------------------------------------------------------------
 gmt 1.0-3
 18 Oct 2005
 --------------------------------------------------------------------------------
 o gmt-package.Rd gives an overview of the package. Other help pages revised.
 
-o gmt.system.Rd and r2gmt indicate that these functions are not really intended
-  for the end user.
+o gmt.system.Rd and r2gmt.Rd indicate that these functions are not really
+  intended for the end user.
 
 
 

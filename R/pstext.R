@@ -1,11 +1,12 @@
-"pstext" <-
-function(x, cmd="-JM -R -O -K", file=options("gmt.file"))
+`pstext` <-
+function(x, cmd="-JM -R -O -K", file=getOption("gmt.file"))
 {
-  if(is.list(file)) file <- unlist(file)[1]
   if(is.null(file)) stop("Please pass a valid 'file' argument, or run gmt(file=\"myfile\").")
+  owd <- setwd(dirname(file)); on.exit(setwd(owd))
 
-  r2gmt(x, "lastTEXT.gmt")
-  gmt.system(paste("pstext lastTEXT.gmt",cmd), file=file, append=TRUE)
+  tmp <- paste(dirname(tempdir()), "text.gmt", sep="/")
+  r2gmt(x, tmp)
+  gmt.system(paste("pstext",tmp,cmd), file=file, append=TRUE)
 
   invisible(NULL)
 }

@@ -1,11 +1,12 @@
-"psxy" <-
-function(x, cmd="-JM -R -Scp -W2p -O -K", file=options("gmt.file"))
+`psxy` <-
+function(x, cmd="-JM -R -Scp -W2p -O -K", file=getOption("gmt.file"))
 {
-  if(is.list(file)) file <- unlist(file)[1]
   if(is.null(file)) stop("Please pass a valid 'file' argument, or run gmt(file=\"myfile\").")
+  owd <- setwd(dirname(file)); on.exit(setwd(owd))
 
-  r2gmt(x, "lastXY.gmt")
-  gmt.system(paste("psxy lastXY.gmt",cmd), file=file, append=TRUE)
+  tmp <- paste(dirname(tempdir()), "xy.gmt", sep="/")
+  r2gmt(x, tmp)
+  gmt.system(paste("psxy",tmp,cmd), file=file, append=TRUE)
 
   invisible(NULL)
 }

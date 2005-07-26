@@ -1,13 +1,11 @@
-"deg2num" <-
+`deg2num` <-
 function(x)
 {
   is.digit <- function(x)
-  {
-    !is.na(as.numeric(x))
-  }
+    suppressWarnings(!is.na(as.numeric(x)))
 
   if(length(x) > 1)
-    sapply(x, deg2num)  # recursive solution, to support different formats for different elements
+    sapply(x, deg2num)  # recursion supports element-specific format
   else
   {
     ## 1 Determine sign (positive or negative)
@@ -33,13 +31,10 @@ function(x)
       stop("Last character must be W, E, S, N, or number")
 
     ## 3 Split string at colons, convert to decimals, and catch split errors
-    splits <- unlist(strsplit(string, ":"))
-    if(length(splits)==1 && all(is.digit(splits)))
-      value <- sign * abs(as.numeric(splits[1]))
-    else if(length(splits)==2 && all(is.digit(splits)))
-      value <- sign * (abs(as.numeric(splits[1])) + as.numeric(splits[2])/60)
-    else if(length(splits)==3 && all(is.digit(splits)))
-      value <- sign * (abs(as.numeric(splits[1])) + as.numeric(splits[2])/60 + as.numeric(splits[3])/3600)
+    splits <- as.numeric(unlist(strsplit(string, ":")))
+    splits <- rep(c(splits,0,0), length.out=3)
+    if(all(is.digit(splits)))
+      value <- sign * (abs(splits[1]) + splits[2]/60 + splits[3]/3600)
     else
       stop("Unable to interpret geographic coordinates. See Appendix B.1.1 in GMT manual for correct formats.")
 

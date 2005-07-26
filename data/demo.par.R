@@ -1,2 +1,2 @@
-"demo.par" <-
-"DEGREE_SYMBOL=degree PLOT_DEGREE_FORMAT=F"
+`demo.par` <-
+"DEGREE_SYMBOL degree PAGE_ORIENTATION portrait PLOT_DEGREE_FORMAT F"

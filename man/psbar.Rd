@@ -2,41 +2,47 @@
 \alias{psbar}
 \title{Add Bars to GMT Mercator Map}
 \description{
-  Call GMT to add bars to the active map and save in postscript format.
-  This function does the necessary calculations to render bars in
-  standard height given a Mercator-projected map. It is not intended for
-  other projections.
+  Call \acronym{GMT} to add bars to a map and save in postscript format.
 }
 \usage{
-psbar(x, cmd="-JM -R -W1p -G180 -O -K", file=options("gmt.file"), ref=0,
-      digits=options("digits"))
+psbar(x, cmd="-JM -R -W1p -G180 -O -K", file=getOption("gmt.file"),
+      ref=0, digits=getOption("digits"))
 }
 \arguments{
   \item{x}{data frame, matrix, or filename containing the data to be
     plotted.}
   \item{cmd}{string of arguments passed to \command{psxy}.}
   \item{file}{filename where the map is saved.}
-  \item{ref}{reference latitude where Height=1 renders a bar 1 degree
+  \item{ref}{reference latitude where height 1 renders a bar 1 degree
     high.}
   \item{digits}{precision used when rounding the geographic
     coordinates.}
 }
 \details{
   The data are arranged in four columns: Lon, Lat, Width, and Height, in
-  that order. See \code{help(r2gmt)} for valid data file format when
-  argument \code{x} is a filename. See the GMT documentation for details
-  on \command{psxy} and other GMT commands.
+  that order.
+
+  If \code{x} is a filename, the data should be tabular with or without
+  a header, separated by commas or whitespace. The first line is
+  interpreted as header if the first non-whitespace character is not
+  minus, point, or number.
+
+  This function provides an alternative to \command{psxy -Sb} and
+  \command{psxy -Sr} for drawing bars on a Mercator map. See the
+  \acronym{GMT} documentation for details on \command{psxy} and other
+  \acronym{GMT} commands.
 }
 \value{
   Null, but the map is annotated and saved in postscript format.
 
-  As a side product, a temporary file \file{lastBAR.gmt} is saved in the
-  working directory.
+  The temporary \acronym{GMT} input file \file{bar.gmt} is saved in
+  directory \code{dirname(tempdir())}, for the user to view or edit. It
+  is later removed by \code{psclose()}.
 }
 \note{
-  Assumes that GMT version 4 is installed, i.e. that \command{psxy} and
-  other commands are in the path, and environment variable \env{GMTHOME}
-  is defined.
+  This function does the necessary calculations to draw bars in standard
+  height given a Mercator-projected map. It is not intended for other
+  projections.
 
   The derivative of the Mercator projection is used to standardize the
   bar height:
@@ -56,21 +62,30 @@ psbar(x, cmd="-JM -R -W1p -G180 -O -K", file=options("gmt.file"), ref=0,
 }
 \author{Arni Magnusson \email{arnima@u.washington.edu}.}
 \seealso{
-  \code{\link{barplot}}, \code{\link[grDevices]{postscript}}.
+  Similar to \code{\link{barplot}} and \code{\link{postscript}} in
+  native \R graphics.
+
+  \code{\link{gmt}}, \code{\link{pscoast}}, \code{\link{psxy}},
+  \code{\link{pstext}}, \code{psbar}, and \code{\link{psclose}} work
+  together to draw maps.
 
   \code{\link{gmt-package}} gives an overview of the package.
 }
 \examples{
 \dontrun{
+# Draw map and save as "map.eps" in R working directory
 gmt(demo.par)
 pscoast(demo.coast)
 psxy(demo.xy)
 pstext(demo.text)
-psbar(demo.bar, ref=64)
+psbar(demo.bar, ref=66)
 psclose()
+# See directory gmt/example for details
 }
 }
 % Graphics
 \keyword{aplot}
 % Programming
 \keyword{interface}
+% MASS
+\keyword{spatial}

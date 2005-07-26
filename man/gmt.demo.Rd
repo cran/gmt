@@ -31,7 +31,8 @@ demo.bar
     \code{Lon}\tab Longitude\cr
     \code{Lat}\tab Latitude\cr
     \code{Size}\tab Size of plot symbol\cr
-    \code{Angle}\tab Angle in degrees counter-clockwise from horizontal\cr
+    \code{Angle}\tab Angle in degrees counter-clockwise from
+    horizontal\cr
     \code{Font}\tab Font number\cr
     \code{Justify}\tab Justification code\cr
     \code{Text}\tab Text label\cr
@@ -45,18 +46,20 @@ demo.bar
   }
 }
 \details{
-  See the GMT documentation for details on \command{psxy},
-  \command{pstext} and other GMT commands.
+  See the \acronym{GMT} documentation for details on \command{psxy},
+  \command{pstext} and other \acronym{GMT} commands.
 }
 \seealso{\code{\link{gmt-package}} gives an overview of the package.}
 \examples{
 \dontrun{
+# Draw map and save as "map.eps" in R working directory
 gmt(demo.par)
 pscoast(demo.coast)
 psxy(demo.xy)
 pstext(demo.text)
-psbar(demo.bar, ref=64)
+psbar(demo.bar, ref=66)
 psclose()
+# See directory gmt/example for details
 }
 }
 \keyword{datasets}

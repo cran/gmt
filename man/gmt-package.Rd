@@ -1,14 +1,14 @@
 \name{gmt-package}
 \alias{gmt-package}
 \docType{package}
-\title{Interface between GMT 4.0 Map-Making Software and R}
+\title{Interface between the GMT Map-Making Software and R}
 \description{
-  Interface between GMT 4.0 map-making software and R, enabling the user
-  to manipulate geographic data within R and call GMT programs to draw
-  and annotate maps in postscript format.
+  Interface between the \acronym{GMT} map-making software and \R,
+  enabling the user to manipulate geographic data within \R and call
+  \acronym{GMT} commands to draw and annotate maps in postscript format.
 }
 \details{
-  \emph{Initialize GMT session:}
+  \emph{Initialize \acronym{GMT} session:}
   \tabular{ll}{
     \code{\link{gmt}} \tab set graphical parameters and postscript file
   }
@@ -23,33 +23,47 @@
   \emph{Convert and calculate:}
   \tabular{ll}{
     \code{\link{deg2num}} \tab degrees to numeric\cr
-    \code{\link{geodist}} \tab distance between coordinates
+    \code{\link{geodist}} \tab distance between coordinates\cr
+    \code{\link{num2deg}} \tab numeric to degrees
   }
   \emph{Examples:}
   \tabular{ll}{
     \code{\link{demo.par}}, \code{\link{demo.coast}},
     \code{\link{demo.xy}}, \code{\link{demo.text}},
-    \code{\link{demo.bar}} \tab strings and data frames that make up a
-    map
+    \code{\link{demo.bar}} \tab strings and data frames to create
+    example map
   }
   \emph{Internal:}
   \tabular{ll}{
-    \code{\link{gmt.system}}, \code{\link{r2gmt}} \tab not really
-    intended for the end user
+    \code{\link{gmt.system}}, \code{\link{r2gmt}} \tab helping functions
   }
-  Additional details are found on the \code{help(package="gmt")} page.
+  This package provides functions to draw basic maps with \acronym{GMT},
+  along with helping functions that can be used to add more advanced
+  features to a map.
+
+  It supports \acronym{GMT} version 4.0 and higher, and has been tested
+  in Windows and Linux.
+
+  \acronym{GMT} users typically write shell scripts to draw maps. The
+  \pkg{gmt} package is about interactive data analysis, rapidly
+  visualizing subsets and summaries of spatial data, while performing
+  statistical analysis in the \R console.
 }
 \author{Arni Magnusson \email{arnima@u.washington.edu}.}
 \references{
-  \cite{Wessel, P. and W.H.F. Smith. 2004. The Generic Mapping Tools:
-    Technical reference and cookbook. Version 4.} Available at
+  \cite{Wessel, P. and W.H.F. Smith. The Generic Mapping Tools:
+    Technical reference and cookbook.} Available at
   http://gmt.soest.hawaii.edu/gmt/doc/pdf/GMT\eqn{\_}{_}Docs.pdf.
 }
 \seealso{
   Other packages that can be used to draw maps include: \pkg{GRASS},
-  \pkg{maps} and \pkg{PBSmapping}.
+  \pkg{maps}, \pkg{PBSmapping}, and \pkg{spgrass6}.
 }
 % Graphics
 \keyword{hplot}
-% Statistics
-\keyword{ts}
+% Basics
+\keyword{package}
+% Programming
+\keyword{interface}
+% MASS
+\keyword{spatial}

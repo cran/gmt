@@ -1,4 +1,4 @@
-"gmt.system" <-
+`gmt.system` <-
 function(cmd, file=NULL, append=FALSE)
 {
   output <- if("invisible" %in% names(formals(system))) system(cmd,intern=TRUE,invisible=TRUE) else system(cmd,intern=TRUE)

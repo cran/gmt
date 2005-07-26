@@ -1,4 +1,4 @@
-"geodist" <-
+`geodist` <-
 function(Nfrom, Efrom, Nto, Eto, units="km")
 {
   units <- match.arg(units, c("km","nm"))

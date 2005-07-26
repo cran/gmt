@@ -2,18 +2,17 @@
 \alias{r2gmt}
 \title{Prepare Data for GMT}
 \description{
-  This function handles data that will be annotated on a GMT map,
-  writing them to a temporary file. Although it is an internal function,
-  users may find it handy for some tasks.
+  This internal function reads data, from a filename or \R object, and
+  writes them to a \acronym{GMT} input file.
 }
 \usage{
-r2gmt(x, outfile, append=FALSE)
+r2gmt(x, datafile, append=FALSE)
 }
 \arguments{
   \item{x}{data frame, matrix, or filename containing the data to be
     written to a temporary file.}
-  \item{outfile}{filename where the data will be written in GMT format,
-    tab-separated without header.}
+  \item{datafile}{filename where the data will be written in
+    \acronym{GMT} format, tab-separated without header.}
   \item{append}{whether data should be appended to an existing file,
     separating segments with ">" lines.}
 }
@@ -23,10 +22,14 @@ r2gmt(x, outfile, append=FALSE)
   interpreted as header if the first non-whitespace character is not
   minus, point, or number.
 }
-\value{The data frame that was written to \code{outfile}.}
+\value{The data frame that was written to \code{datafile}.}
 \note{
-  This function is primarily an internal function, but users may find it
-  handy for their own plotting functions.
+  \code{r2gmt} is like \code{write.table}, except it allows \code{x} to
+  be a filename, and appends tables with the \acronym{GMT} \code{>}
+  separator.
+
+  It is mainly called by other functions, but users may find it useful
+  for writing input data for \acronym{GMT} commands.
 }
 \author{Arni Magnusson \email{arnima@u.washington.edu}.}
 \seealso{

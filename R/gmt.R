@@ -1,12 +1,14 @@
-"gmt" <-
-function(par, style="s", file="map.eps", quiet=FALSE)
+`gmt` <-
+function(par=NULL, file="map.eps", style="s", quiet=TRUE)
 {
-  if(!missing(par))
+  owd <- setwd(dirname(file)); on.exit(setwd(owd))
+
+  if(is.character(par))
   {
     gmt.system(paste("gmtdefaults -D",style,sep=""), file=".gmtdefaults4")
-    if(is.character(par) && nchar(par)>0)
-      gmt.system(paste("gmtset",gsub("="," = ",par)))  # add extra spacing around equal signs
+    gmt.system(paste("gmtset", par))
   }
+
   options(gmt.file=file)
 
   if(!quiet)
@@ -15,6 +17,7 @@ function(par, style="s", file="map.eps", quiet=FALSE)
     cat(paste(gmtdefaults,collapse="\n"), "\n\n")
     print(options("gmt.file"))
   }
+
   invisible(options("gmt.file"))
 }
 

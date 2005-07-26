@@ -2,11 +2,11 @@
 \alias{pstext}
 \title{Add Text/Symbols to GMT Map}
 \description{
-  Call GMT to add text/symbols to the active map and save in postscript
+  Call \acronym{GMT} to add text/symbols to a map and save in postscript
   format.
 }
 \usage{
-pstext(x, cmd="-JM -R -O -K", file=options("gmt.file"))
+pstext(x, cmd="-JM -R -O -K", file=getOption("gmt.file"))
 }
 \arguments{
   \item{x}{data frame, matrix, or filename containing the data to be
@@ -16,38 +16,49 @@ pstext(x, cmd="-JM -R -O -K", file=options("gmt.file"))
 }
 \details{
   The data are arranged in seven columns: Lon, Lat, Size, Angle, Font,
-  Justify, and Text, in that order. See \code{help(r2gmt)} for valid
-  data file format when argument \code{x} is a filename. See the GMT
-  documentation for details on \command{pstext} and other GMT commands.
+  Justify, and Text, in that order.
+
+  If \code{x} is a filename, the data should be tabular with or without
+  a header, separated by commas or whitespace. The first line is
+  interpreted as header if the first non-whitespace character is not
+  minus, point, or number.
+
+  See the \acronym{GMT} documentation for details on \command{pstext}
+  and other \acronym{GMT} commands.
 }
 \value{
   Null, but the map is annotated and saved in postscript format.
 
-  As a side product, a temporary file \file{lastTEXT.gmt} is saved in
-  the working directory.
-}
-\note{
-  Assumes that GMT version 4 is installed, i.e. that \command{pstext}
-  and other commands are in the path, and environment variable
-  \env{GMTHOME} is defined.
+  The temporary \acronym{GMT} input file \file{text.gmt} is saved in
+  directory \code{dirname(tempdir())}, for the user to view or edit. It
+  is later removed by \code{psclose()}.
 }
 \author{Arni Magnusson \email{arnima@u.washington.edu}.}
 \seealso{
-  \code{\link{text}}, \code{\link[grDevices]{postscript}}.
+  Similar to \code{\link{text}} and \code{\link{postscript}} in native
+  \R graphics.
+
+  \code{\link{gmt}}, \code{\link{pscoast}}, \code{\link{psxy}},
+  \code{pstext}, \code{\link{psbar}}, and \code{\link{psclose}} work
+  together to draw maps.
 
   \code{\link{gmt-package}} gives an overview of the package.
 }
 \examples{
 \dontrun{
+# Draw map and save as "map.eps" in current working directory
 gmt(demo.par)
 pscoast(demo.coast)
 psxy(demo.xy)
 pstext(demo.text)
-psbar(demo.bar, ref=64)
+psbar(demo.bar, ref=66)
 psclose()
+# See directory gmt/example for details
 }
 }
 % Graphics
 \keyword{aplot}
 % Programming
 \keyword{interface}
+% MASS
+\keyword{spatial}

@@ -1,22 +1,21 @@
-"psbar" <-
-function(x, cmd="-JM -R -W1p -G180 -O -K", file=options("gmt.file"), ref=0, digits=options("digits"))
+`psbar` <-
+function(x, cmd="-JM -R -W1p -G180 -O -K", file=getOption("gmt.file"), ref=0, digits=getOption("digits"))
 {
-  write.each.bar <- function(bar.row)
+  write.each.bar <- function(bar.row, tmp)
   {
     left   <- bar.row[1]  #  2----3
     right  <- bar.row[2]  #  |    |
     bottom <- bar.row[3]  #  |    |
     top    <- bar.row[4]  # 1+5---4
     bar.corners <- rbind(c(left,bottom), c(left,top), c(right,top), c(right,bottom), c(left,bottom))
-    r2gmt(bar.corners, "lastBAR.gmt", append=TRUE)
+    r2gmt(bar.corners, tmp, append=TRUE)
   }
-
-  if(is.list(file)) file <- unlist(file)[1]
   if(is.null(file)) stop("Please pass a valid 'file' argument, or run gmt(file=\"myfile\").")
-  if(is.list(digits)) digits <- unlist(digits)[1]
+  owd <- setwd(dirname(file)); on.exit(setwd(owd))
 
-  ## 1 Parse user data and define directories
-  x.matrix <- as.matrix(r2gmt(x,"lastBAR.gmt"))
+  ## 1 Parse user data
+  tmp <- paste(dirname(tempdir()), "bar.gmt", sep="/")
+  x.matrix <- as.matrix(r2gmt(x,tmp))  # unlike psxy and pstext, we can't work blindly with a data file, so read and parse
   lon <- deg2num(x.matrix[,1])   # longitude at bar center
   lat <- deg2num(x.matrix[,2])   # latitude at bar base
   w   <- x.matrix[,3]            # bar width in degrees
@@ -41,11 +40,11 @@ function(x, cmd="-JM -R -W1p -G180 -O -K", file=options("gmt.file"), ref=0, digi
   top       <- lat + h.deg                                           # top bar edge
   bar.frame <- data.frame(left=left, right=right, bottom=bottom, top=top)
 
-  ## 3 Write bar coordinates into multiple segment file and add bars to map
-  file.create("lastBAR.gmt")
-  apply(bar.frame, 1, write.each.bar)
+  ## 3 Write bar coordinates into multisegment file and add bars to map
+  file.create(tmp)  # overwrite previous tmp
+  apply(bar.frame, 1, write.each.bar, tmp=tmp)
   safe.cmd <- paste(cmd, "-A -M")  # ensure lines are straight and multiple-file is expected
-  gmt.system(paste("psxy lastBAR.gmt",safe.cmd), file=file, append=TRUE)
+  gmt.system(paste("psxy",tmp,safe.cmd), file=file, append=TRUE)
 
   invisible(NULL)
 }

@@ -1,6 +1,4 @@
-"demo.xy" <-
-structure(list(Lon = structure(as.integer(c(1, 2, 3)), .Label = c("-24:10", 
-"-24:30", "-24:50"), class = "factor"), Lat = structure(as.integer(c(1, 
-2, 3)), .Label = c("66:10", "66:25", "66:45"), class = "factor"), 
-    Size = c(3, 6, 9)), .Names = c("Lon", "Lat", "Size"), row.names = c("1", 
-"2", "3"), class = "data.frame")
+`demo.xy` <-
+structure(list(Lon = c("-29:00", "-27:30", "-26:00"), Lat = c("56:30", 
+"57:00", "57:30"), Size = c(3L, 6L, 9L)), .Names = c("Lon", "Lat", 
+"Size"), class = "data.frame", row.names = c(NA, -3L))
