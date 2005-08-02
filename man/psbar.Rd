@@ -5,7 +5,7 @@
   Call \acronym{GMT} to add bars to a map and save in postscript format.
 }
 \usage{
-psbar(x, cmd="-JM -R -W1p -G180 -O -K", file=getOption("gmt.file"),
+psbar(x, cmd="-J -R -W1p -G180 -O -K", file=getOption("gmt.file"),
       ref=0, digits=getOption("digits"))
 }
 \arguments{

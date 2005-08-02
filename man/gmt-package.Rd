@@ -46,7 +46,7 @@
 
   \acronym{GMT} users typically write shell scripts to draw maps. The
   \pkg{gmt} package is about interactive data analysis, rapidly
-  visualizing subsets and summaries of spatial data, while performing
+  visualizing subsets and summaries of geographic data, while performing
   statistical analysis in the \R console.
 }
 \author{Arni Magnusson \email{arnima@u.washington.edu}.}

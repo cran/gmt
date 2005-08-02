@@ -6,7 +6,7 @@
   format.
 }
 \usage{
-pstext(x, cmd="-JM -R -O -K", file=getOption("gmt.file"))
+pstext(x, cmd="-J -R -O -K", file=getOption("gmt.file"))
 }
 \arguments{
   \item{x}{data frame, matrix, or filename containing the data to be

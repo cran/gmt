@@ -29,9 +29,10 @@ geodist(Nfrom, Efrom, Nto, Eto, units="km")
   where distance and coordinates are expressed in radians.
   \eqn{\theta_1}{N1} and \eqn{\theta_2}{N2} is the latitude of origin
   and destination, and \eqn{\phi_1}{E1} and \eqn{\phi_2}{E2} is
-  longitude. The calculations assume a perfect sphere and elevation
-  differences are ignored. The SI definition of a nautical mile is
-  exactly 1.852 km.
+  longitude.
+
+  The calculations assume a perfect sphere and elevation differences are
+  ignored. The SI definition of a nautical mile is exactly 1.852 km.
 }
 \author{Arni Magnusson \email{arnima@u.washington.edu}.}
 \seealso{
@@ -47,3 +48,4 @@ geodist(90,0, -90,0, "nm")        # from pole to pole
 \keyword{math}
 % MASS
 \keyword{spatial}
+\encoding{latin1}

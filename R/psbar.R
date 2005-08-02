@@ -1,5 +1,5 @@
 `psbar` <-
-function(x, cmd="-JM -R -W1p -G180 -O -K", file=getOption("gmt.file"), ref=0, digits=getOption("digits"))
+function(x, cmd="-J -R -W1p -G180 -O -K", file=getOption("gmt.file"), ref=0, digits=getOption("digits"))
 {
   write.each.bar <- function(bar.row, tmp)
   {

@@ -5,18 +5,33 @@
   Call \acronym{GMT} to finalize a map and save in postscript format.
 }
 \usage{
-psclose(file=getOption("gmt.file"), cleanup=TRUE)
+psclose(file=getOption("gmt.file"), trailer=TRUE, cleanup=TRUE)
 }
 \arguments{
   \item{file}{filename where the map is saved.}
+  \item{trailer}{whether a closing trailer should be appended to the
+    postscript file.}
   \item{cleanup}{whether history files \file{.gmtcommands4} and
     \file{.gmtdefaults4} should be removed, leaving no trace except the
     postscript file.}
 }
+\details{
+  A closing trailer is required if the last plotting command included
+  \code{-K} (default behaviour).
+}
 \value{Null, but the map is finalized and saved in postscript format.}
 \note{
-  The postscript file is finalized by appending a closing trailer, and
-  the bounding box declaration is moved to the header. This enables
+  This function performs four tasks: (1) appends a closing trailer to
+  the postscript file [optional], (2) removes \acronym{GMT} files in
+  temporary directory, (3) removes \acronym{GMT} history files in map
+  directory [optional], and (4) moves the bounding box declaration to
+  the postsript file header.
+
+  \begin{enumerate}
+  aha
+  \end{enumerate}
+
+  This last enables
   Ghostscript to distill a \acronym{PDF} map using the
   \command{-dEPSCrop} method.
 }
