@@ -1,0 +1,15 @@
+deg2num                 Convert degrees to number
+demo.par                GMT example data
+demo.bar                GMT example data
+demo.coast              GMT example data
+demo.par                GMT example data
+demo.text               GMT example data
+demo.xy                 GMT example data
+geodist                 Distance between geographic coordinates
+gmt                     Initialize a GMT session
+psbar                   Add bars to GMT Mercator map
+psclose                 Finalize GMT map
+pscoast                 Draw GMT map
+pstext                  Add text/symbols to GMT map
+psxy                    Add lines/symbols to GMT map
+r2gmt                   Prepare data for GMT

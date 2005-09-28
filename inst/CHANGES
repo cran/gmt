@@ -1,0 +1,39 @@
+--------------------------------------------------------------------------------
+gmt 1.0-0
+28 Sep 2005
+--------------------------------------------------------------------------------
+o man directory contains Rd documentation files.
+
+o root directory contains DESCRIPTION and INDEX.
+
+o inst directory contains CHANGES.
+
+o Submitted to CRAN.
+
+
+
+
+--------------------------------------------------------------------------------
+gmt 0.9-1
+27 Sep 2005
+--------------------------------------------------------------------------------
+o psbar() supports 'ref' argument to standardize bar height.
+
+o gmt() makes .gmthome(), gmtdefaults, and gmtset() obsolete. The package
+  assumes that binaries are in path and GMTHOME is defined.
+
+o r2gmt() makes .data2gmt() and .file2gmt() obsolete.
+
+
+
+
+--------------------------------------------------------------------------------
+gmt 0.9-0
+25 Sep 2005
+--------------------------------------------------------------------------------
+o R directory contains .data2gmt.R, .file2gmt.R, .gmthome.R, deg2num.R,
+  geodist.R, gmt.R, gmtdefaults.R, gmtset.R, psbar.R, psclose.R, pscoast.R,
+  pstext.R, and psxy.R.
+
+o data directory contains demo.bar.R, demo.coast.R, demo.set.R, demo.text.R,
+  and demo.xy.R.
