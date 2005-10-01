@@ -10,9 +10,9 @@ pstext(x, cmd="-JM -R -O -K", file=options("gmt.file"))
 }
 \arguments{
   \item{x}{data frame, matrix, or filename containing the data to be
-    plotted}
-  \item{cmd}{string of arguments passed to \command{pstext}}
-  \item{file}{filename where the map is saved}
+    plotted.}
+  \item{cmd}{string of arguments passed to \command{pstext}.}
+  \item{file}{filename where the map is saved.}
 }
 \details{
   The data are arranged in seven columns: Lon, Lat, Size, Angle, Font,

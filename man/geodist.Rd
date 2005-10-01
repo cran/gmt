@@ -6,12 +6,12 @@
 geodist(Nfrom, Efrom, Nto, Eto, units="km")
 }
 \arguments{
-  \item{Nfrom}{latitude of origin}
-  \item{Efrom}{longitude of origin}
-  \item{Nto}{latitude of destination}
-  \item{Eto}{longitude of destination}
+  \item{Nfrom}{latitude of origin.}
+  \item{Efrom}{longitude of origin.}
+  \item{Nto}{latitude of destination.}
+  \item{Eto}{longitude of destination.}
   \item{units}{how distance is measured: \code{"km"} for kilometres,
-    \code{"nm"} for nautical miles}
+    \code{"nm"} for nautical miles.}
 }
 \details{
   Latitude and longitude are passed as decimal numbers, e.g. 66.5 for

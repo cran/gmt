@@ -13,12 +13,13 @@ psbar(x, cmd="-JM -R -W1p -G180 -O -K", file=options("gmt.file"), ref=0,
 }
 \arguments{
   \item{x}{data frame, matrix, or filename containing the data to be
-    plotted}
-  \item{cmd}{string of arguments passed to \command{psxy}}
-  \item{file}{filename where the map is saved}
+    plotted.}
+  \item{cmd}{string of arguments passed to \command{psxy}.}
+  \item{file}{filename where the map is saved.}
   \item{ref}{reference latitude where Height=1 renders a bar 1 degree
-    high}
-  \item{digits}{precision used when rounding the geographic coordinates}
+    high.}
+  \item{digits}{precision used when rounding the geographic
+    coordinates.}
 }
 \details{
   The data are arranged in four columns: Lon, Lat, Width, and Height, in

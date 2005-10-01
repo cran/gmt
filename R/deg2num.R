@@ -1,20 +1,5 @@
 "deg2num" <-
 function(x)
-###########################################################################################################################
-###                                                                                                                       #
-### Function: deg2num                                                                                                     #
-###                                                                                                                       #
-### Purpose:  Convert deg:min:sec expression to decimal number                                                            #
-###                                                                                                                       #
-### Args:     x is a string vector with deg:min:sec expressions                                                           #
-###                                                                                                                       #
-### Notes:    See Appendix B.1.1 in the GMT manual for correct formats of deg:min:sec expressions                         #
-###                                                                                                                       #
-### Example:  deg2num(c("12:30:44.5W", "17.5S", "1:00:05", "200:45E"))                                                    #
-###                                                                                                                       #
-### Returns:  Numeric vector of same length as x, containing the converted values                                         #
-###                                                                                                                       #
-###########################################################################################################################
 {
   is.digit <- function(x)
   {

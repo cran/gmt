@@ -11,11 +11,11 @@ r2gmt(x, outfile, append=FALSE)
 }
 \arguments{
   \item{x}{data frame, matrix, or filename containing the data to be
-    written to a temporary file}
+    written to a temporary file.}
   \item{outfile}{filename where the data will be written in GMT format,
-    tab-separated without header}
+    tab-separated without header.}
   \item{append}{whether data should be appended to an existing file,
-    separating segments with ">" lines}
+    separating segments with ">" lines.}
 }
 \details{
   If \code{x} is a filename, the data should be tabular with or without

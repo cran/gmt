@@ -9,8 +9,8 @@
 pscoast(cmd, file=options("gmt.file"))
 }
 \arguments{
-  \item{cmd}{string of arguments passed to \command{pscoast}}
-  \item{file}{filename where the map will be saved}
+  \item{cmd}{string of arguments passed to \command{pscoast}.}
+  \item{file}{filename where the map will be saved.}
 }
 \details{
   File type should be \file{.eps} when \code{PAPER_MEDIA} is \code{A4+}

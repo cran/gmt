@@ -10,9 +10,9 @@ psxy(x, cmd="-JM -R -Scp -W2p -O -K", file=options("gmt.file"))
 }
 \arguments{
   \item{x}{data frame, matrix, or filename containing the data to be
-    plotted}
-  \item{cmd}{string of arguments passed to \command{psxy}}
-  \item{file}{filename where the map is saved}
+    plotted.}
+  \item{cmd}{string of arguments passed to \command{psxy}.}
+  \item{file}{filename where the map is saved.}
 }
 \details{
   The data are arranged in two (Lon, Lat) or more columns, depending on

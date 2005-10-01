@@ -1,39 +1,5 @@
 "psbar" <-
 function(x, cmd="-JM -R -W1p -G180 -O -K", file=options("gmt.file"), ref=0, digits=options("digits"))
-###########################################################################################################################
-###                                                                                                                       #
-### Function: psbar                                                                                                       #
-###                                                                                                                       #
-### Purpose:  Add bars to GMT Mercator map                                                                                #
-###                                                                                                                       #
-### Args:     x is the filename/matrix/data.frame containing the data to be plotted                                       #
-###           cmd is the string of arguments passed to psxy.exe                                                           #
-###           file is the postscript file to which bars will be added                                                     #
-###           ref is a reference latitude at which Height=1 is 1° high                                                    #
-###           digits is the precision used when rounding the geographic coordinates, resulting in smaller bar files       #
-###                                                                                                                       #
-### Notes:    Data format: [  Lon  |  Lat  |  Width  |  Height  ]                                                         #
-###             Lon and Lat refer to the bar base, Width=1 is 1° wide, and Height=1 is 1° high at ref°N/S                 #
-###                                                                                                                       #
-###           Method used to standardize bar height in Mercator projection:                                               #
-###             each bar height is multiplied by 1/derivative, then standardized to ref°N/S                               #
-###             the bars are plotted separately, after determining the four lat/lon corners                               #
-###                                                                                                                       #
-###           Calculus:                                                                                                   #
-###             the Mercator equation looks better when expressed in radians (=180/pi), but the user works with degrees:  #
-###             basic transformation:   Y = log(tan(pi/4+LAT*pi/360))                                                     #
-###             inverse transformation: LAT = (atan(exp(Y))-pi/4) / (pi/360)                                              #
-###             derivative:             Y'(LAT) = (pi/360) / (tan(pi/4+LAT*pi/360)*cos(pi/4+LAT*pi/360)^2)                #
-###                                                                                                                       #
-###             LAT      0°     10°    20°    30°    40°    50°    60°    70°    80°    90°                               #
-###             Y        0.000  0.175  0.356  0.549  0.763  1.011  1.317  1.735  2.436  37.332                            #
-###             Y'(LAT)  0.017  0.018  0.019  0.020  0.023  0.027  0.035  0.051  0.101  Inf                               #
-###                                                                                                                       #
-### Example:  gmt(demo.par); pscoast(demo.coast); psxy(demo.xy); pstext(demo.text); psbar(demo.bar,ref=64); psclose()     #
-###                                                                                                                       #
-### Returns:  NULL                                                                                                        #
-###                                                                                                                       #
-###########################################################################################################################
 {
   write.each.bar <- function(bar.row)
   {
@@ -57,6 +23,14 @@ function(x, cmd="-JM -R -W1p -G180 -O -K", file=options("gmt.file"), ref=0, digi
   h   <- x.matrix[,4]            # bar height in user units (1 degree high at ref°N/S)
   n   <- nrow(x.matrix)          # number of bars
 
+  ##   Y = log(tan(pi/4+LAT*pi/360))
+  ##   LAT = (atan(exp(Y))-pi/4) / (pi/360)
+  ##   Y'(LAT) = (pi/360) / (tan(pi/4+LAT*pi/360)*cos(pi/4+LAT*pi/360)^2)
+
+  ##   LAT      0°     10°    20°    30°    40°    50°    60°    70°    80°    90°
+  ##   Y        0.000  0.175  0.356  0.549  0.763  1.011  1.317  1.735  2.436  37.332
+  ##   Y'(LAT)  0.017  0.018  0.019  0.020  0.023  0.027  0.035  0.051  0.101  Inf
+
   ## 2 Create bar.frame containing coordinates
   dYlat <- (pi/360) / (tan(pi/4+lat*pi/360)*cos(pi/4+lat*pi/360)^2)  # derivative of Mercator Y at each latitude
   dYref <- (pi/360) / (tan(pi/4+ref*pi/360)*cos(pi/4+ref*pi/360)^2)  # derivative of Mercator Y at ref°N/S
@@ -71,7 +45,10 @@ function(x, cmd="-JM -R -W1p -G180 -O -K", file=options("gmt.file"), ref=0, digi
   file.create("lastBAR.gmt")
   apply(bar.frame, 1, write.each.bar)
   safe.cmd <- paste(cmd, "-A -M")  # ensure lines are straight and multiple-file is expected
-  shell(paste("psxy lastBAR.gmt ",safe.cmd,">>",file,sep=""), invisible=TRUE)
+  ps <- system(paste("psxy lastBAR.gmt ",safe.cmd,sep=""), intern=TRUE, invisible=TRUE)
+  pscon <- file(file, "a")  # append
+  writeLines(ps, pscon)
+  close.connection(pscon)
 
   invisible(NULL)
 }

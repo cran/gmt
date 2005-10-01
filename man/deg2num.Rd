@@ -5,7 +5,7 @@
 \usage{
 deg2num(x)
 }
-\arguments{\item{x}{string or vector of strings}}
+\arguments{\item{x}{string or vector of strings.}}
 \details{
   Degrees, minutes and seconds are separated by colons, and each can
   have a decimal point as well. First character must be a minus sign or

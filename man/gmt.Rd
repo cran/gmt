@@ -11,13 +11,13 @@ gmt(par, style="s", file="map.eps", quiet=FALSE)
 \arguments{
   \item{par}{optional string of the form
     \code{"PARAMETER1=value1 PARAMETER2=value2 ..."}, passed to
-    \command{gmtset}}
+    \command{gmtset}.}
   \item{style}{default units and values: \code{"s"} for SI
     (international) or \code{"u"} for United States, passed to
-    \command{gmtdefaults}}
+    \command{gmtdefaults}.}
   \item{file}{postscript filename used in subsequent calls to GMT plot
     functions, passed to \code{options()}}
-  \item{quiet}{whether current settings should be displayed}
+  \item{quiet}{whether current settings should be displayed.}
 }
 \details{
   File type should be \file{.eps} when \code{PAPER_MEDIA} is \code{A4+}

@@ -9,7 +9,7 @@
 psclose(file=options("gmt.file"))
 }
 \arguments{
-  \item{file}{filename where the map is saved}
+  \item{file}{filename where the map is saved.}
 }
 \details{
   See the GMT documentation for details on \command{psxy} and other GMT

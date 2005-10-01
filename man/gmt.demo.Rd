@@ -53,7 +53,8 @@ demo.bar
   http://gmt.soest.hawaii.edu/gmt/doc/pdf/GMT\eqn{\_}{_}Docs.pdf.
 }
 \seealso{
-  \code{\link{psxy}}, \code{\link{pstext}}, \code{\link{psbar}}.
+  \code{\link{gmt}}, \code{\link{pscoast}}, \code{\link{psxy}},
+  \code{\link{pstext}}, \code{\link{psbar}}.
 }
 \examples{
 \dontrun{
