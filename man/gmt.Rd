@@ -1,6 +1,6 @@
 \name{gmt}
 \alias{gmt}
-\title{Initialize a GMT Session}
+\title{Initialize GMT Session}
 \description{
   Initialize a GMT (Generic Mapping Tools) session by setting graphical
   parameters and current postscript file.

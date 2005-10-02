@@ -6,7 +6,8 @@ demo.par                GMT example data
 demo.text               GMT example data
 demo.xy                 GMT example data
 geodist                 Distance between geographic coordinates
-gmt                     Initialize a GMT session
+gmt                     Initialize GMT session
+gmt.system              Invoke GMT system command
 psbar                   Add bars to GMT Mercator map
 psclose                 Finalize GMT map
 pscoast                 Draw GMT map

@@ -53,8 +53,10 @@ demo.bar
   http://gmt.soest.hawaii.edu/gmt/doc/pdf/GMT\eqn{\_}{_}Docs.pdf.
 }
 \seealso{
-  \code{\link{gmt}}, \code{\link{pscoast}}, \code{\link{psxy}},
-  \code{\link{pstext}}, \code{\link{psbar}}.
+  \code{\link{gmt}} initializes the GMT session, \code{\link{pscoast}}
+  draws a map, \code{\link{psxy}}, \code{\link{pstext}}, and
+  \code{\link{psbar}} annotate the map, and \code{\link{psclose}}
+  finalizes the postscript file.
 }
 \examples{
 \dontrun{

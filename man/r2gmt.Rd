@@ -25,9 +25,11 @@ r2gmt(x, outfile, append=FALSE)
 }
 \value{The data frame that was written to \code{outfile}.}
 \author{Arni Magnusson \email{arnima@u.washington.edu}.}
-\seealso{\code{\link{scan}} and \code{\link{read.table}} are used to
-  read in the data, \code{\link{write}} and \code{\link{write.table}} to
-  write them to the temporary file.}
+\seealso{
+  \code{\link{scan}} and \code{\link{read.table}} are used to read in
+  the data, \code{\link{write}} and \code{\link{write.table}} to write
+  them to the temporary file.
+}
 \examples{
 LonLat1 <- data.frame(Lon=1:3, Lat=4:6)
 LonLat2 <- data.frame(Lon=7:8, Lat=9:10)

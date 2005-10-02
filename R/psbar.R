@@ -45,10 +45,7 @@ function(x, cmd="-JM -R -W1p -G180 -O -K", file=options("gmt.file"), ref=0, digi
   file.create("lastBAR.gmt")
   apply(bar.frame, 1, write.each.bar)
   safe.cmd <- paste(cmd, "-A -M")  # ensure lines are straight and multiple-file is expected
-  ps <- system(paste("psxy lastBAR.gmt ",safe.cmd,sep=""), intern=TRUE, invisible=TRUE)
-  pscon <- file(file, "a")  # append
-  writeLines(ps, pscon)
-  close.connection(pscon)
+  gmt.system(paste("psxy lastBAR.gmt",safe.cmd), file=file, append=TRUE)
 
   invisible(NULL)
 }
