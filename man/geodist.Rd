@@ -35,10 +35,9 @@ geodist(Nfrom, Efrom, Nto, Eto, units="km")
 }
 \author{Arni Magnusson \email{arnima@u.washington.edu}.}
 \seealso{
-  \code{\link{diff}} calculates the difference between two numbers.
+  \code{\link{diff}}, \code{\link{Trig}}.
 
-  Trigonometric functions are summarized on the \code{\link{Trig}} help
-  page.
+  \code{\link{gmt-package}} gives an overview of the package.
 }
 \examples{
 geodist(55.75,37.62, 39.9,116.4)  # Moscow - Beijing

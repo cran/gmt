@@ -1,4 +1,4 @@
-deg2num                 Convert degrees to number
+deg2num                 Convert degrees to numeric
 demo.par                GMT example data
 demo.bar                GMT example data
 demo.coast              GMT example data

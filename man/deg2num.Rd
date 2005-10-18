@@ -1,6 +1,6 @@
 \name{deg2num}
 \alias{deg2num}
-\title{Convert Degrees to Number}
+\title{Convert Degrees to Numeric}
 \description{Convert deg:min:sec string to decimal number.}
 \usage{
 deg2num(x)
@@ -16,12 +16,11 @@ deg2num(x)
   The string format is adopted from Appendix B.1.1 in the GMT manual.
 }
 \author{Arni Magnusson \email{arnima@u.washington.edu}.}
-\references{
-  \cite{Wessel, P. and W.H.F. Smith. 2004. The Generic Mapping Tools:
-    Technical reference and cookbook. Version 4.} Available at
-  http://gmt.soest.hawaii.edu/gmt/doc/pdf/GMT\eqn{\_}{_}Docs.pdf.
+\seealso{
+  \code{\link{as.numeric}}.
+
+  \code{\link{gmt-package}} gives an overview of the package.
 }
-\seealso{\code{\link{as.numeric}} converts some strings to numbers.}
 \examples{
 deg2num(c("12:30:44.5W", "17.5S", "1:00:05", "200:45E"))
 }

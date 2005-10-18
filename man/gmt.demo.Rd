@@ -1,5 +1,6 @@
 \name{gmt.demo}
 \docType{data}
+\alias{gmt.demo}
 \alias{demo.par}
 \alias{demo.coast}
 \alias{demo.xy}
@@ -47,17 +48,7 @@ demo.bar
   See the GMT documentation for details on \command{psxy},
   \command{pstext} and other GMT commands.
 }
-\references{
-  \cite{Wessel, P. and W.H.F. Smith. 2004. The Generic Mapping Tools:
-    Technical reference and cookbook. Version 4.} Available at
-  http://gmt.soest.hawaii.edu/gmt/doc/pdf/GMT\eqn{\_}{_}Docs.pdf.
-}
-\seealso{
-  \code{\link{gmt}} initializes the GMT session, \code{\link{pscoast}}
-  draws a map, \code{\link{psxy}}, \code{\link{pstext}}, and
-  \code{\link{psbar}} annotate the map, and \code{\link{psclose}}
-  finalizes the postscript file.
-}
+\seealso{\code{\link{gmt-package}} gives an overview of the package.}
 \examples{
 \dontrun{
 gmt(demo.par)

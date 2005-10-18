@@ -26,16 +26,10 @@ pscoast(cmd, file=options("gmt.file"))
   \env{GMTHOME} is defined.
 }
 \author{Arni Magnusson \email{arnima@u.washington.edu}.}
-\references{
-  \cite{Wessel, P. and W.H.F. Smith. 2004. The Generic Mapping Tools:
-    Technical reference and cookbook. Version 4.} Available at
-  http://gmt.soest.hawaii.edu/gmt/doc/pdf/GMT\eqn{\_}{_}Docs.pdf.
-}
 \seealso{
-  \code{\link{gmt}} initializes the GMT session, \code{pscoast} draws a
-  map, \code{\link{psxy}}, \code{\link{pstext}}, and \code{\link{psbar}}
-  annotate the map, and \code{\link{psclose}} finalizes the postscript
-  file.
+  \code{\link{plot.default}}, \code{\link[grDevices]{postscript}}.
+
+  \code{\link{gmt-package}} gives an overview of the package.
 }
 \examples{
 \dontrun{

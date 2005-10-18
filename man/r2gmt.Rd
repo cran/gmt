@@ -24,11 +24,16 @@ r2gmt(x, outfile, append=FALSE)
   minus, point, or number.
 }
 \value{The data frame that was written to \code{outfile}.}
+\note{
+  This function is primarily an internal function, but users may find it
+  handy for their own plotting functions.
+}
 \author{Arni Magnusson \email{arnima@u.washington.edu}.}
 \seealso{
-  \code{\link{scan}} and \code{\link{read.table}} are used to read in
-  the data, \code{\link{write}} and \code{\link{write.table}} to write
-  them to the temporary file.
+  \code{\link{scan}}, \code{\link{read.table}}, \code{\link{write}},
+  \code{\link{write.table}}.
+
+  \code{\link{gmt-package}} gives an overview of the package.
 }
 \examples{
 LonLat1 <- data.frame(Lon=1:3, Lat=4:6)

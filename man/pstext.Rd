@@ -16,8 +16,9 @@ pstext(x, cmd="-JM -R -O -K", file=options("gmt.file"))
 }
 \details{
   The data are arranged in seven columns: Lon, Lat, Size, Angle, Font,
-  Justify, and Text, in that order. See the GMT documentation for
-  details on \command{pstext} and other GMT commands.
+  Justify, and Text, in that order. See \code{help(r2gmt)} for valid
+  data file format when argument \code{x} is a filename. See the GMT
+  documentation for details on \command{pstext} and other GMT commands.
 }
 \value{
   Null, but the map is annotated and saved in postscript format.
@@ -31,19 +32,10 @@ pstext(x, cmd="-JM -R -O -K", file=options("gmt.file"))
   \env{GMTHOME} is defined.
 }
 \author{Arni Magnusson \email{arnima@u.washington.edu}.}
-\references{
-  \cite{Wessel, P. and W.H.F. Smith. 2004. The Generic Mapping Tools:
-    Technical reference and cookbook. Version 4.} Available at
-  http://gmt.soest.hawaii.edu/gmt/doc/pdf/GMT\eqn{\_}{_}Docs.pdf.
-}
 \seealso{
-  \code{\link{gmt}} initializes the GMT session, \code{\link{pscoast}}
-  draws a map, \code{\link{psxy}}, \code{pstext} and \code{\link{psbar}}
-  annotate the map, and \code{\link{psclose}} finalizes the postscript
-  file.
+  \code{\link{text}}, \code{\link[grDevices]{postscript}}.
 
-  See \code{\link{r2gmt}} for valid data file format when argument
-  \code{x} is a filename.
+  \code{\link{gmt-package}} gives an overview of the package.
 }
 \examples{
 \dontrun{
