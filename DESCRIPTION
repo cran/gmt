@@ -1,6 +1,6 @@
 Package: gmt
-Version: 1.1-1
-Date: 2005-08-02
+Version: 1.1-2
+Date: 2007-09-29
 Title: Interface between GMT map-making software and R
 Author: Arni Magnusson
 Maintainer: Arni Magnusson <arnima@u.washington.edu>
@@ -13,4 +13,4 @@ Description: Interface between the GMT map-making software and R,
 License: GPL version 2 or newer
 URL: http://gmt.soest.hawaii.edu/,
   http://students.washington.edu/arnima/s/
-Packaged: Thu Aug  2 19:33:01 2007; hornik
+Packaged: Sat Sep 29 20:12:39 2007; arnima
