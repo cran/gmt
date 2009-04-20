@@ -1,8 +1,17 @@
 --------------------------------------------------------------------------------
+gmt 1.1-3
+20 Apr 2009
+--------------------------------------------------------------------------------
+o Updated URL of GMT manual.
+
+
+
+
+--------------------------------------------------------------------------------
 gmt 1.1-2
 29 Sep 2007
 --------------------------------------------------------------------------------
-o Package administrative changes for R 2.6.0.
+o No user-visible changes.
 
 
 
@@ -11,10 +20,10 @@ o Package administrative changes for R 2.6.0.
 gmt 1.1-1
 02 Aug 2007
 --------------------------------------------------------------------------------
-o psxy(), pstext(), and psclose() no longer expect a Mercator-projected map, but
-  any kind of map.
+o Improved psxy(), pstext(), and psclose() so they no longer expect a
+  Mercator-projected map, but any kind of map.
 
-o gmt.system() has been simplified, thanks to improved system() in R 2.5.0.
+o Simplified gmt.system(), thanks to improved system() in R 2.5.0.
 
 
 
@@ -23,31 +32,26 @@ o gmt.system() has been simplified, thanks to improved system() in R 2.5.0.
 gmt 1.1-0
 29 Jul 2007
 --------------------------------------------------------------------------------
-o New function num2deg() converts numeric to degrees, the opposite of num2deg().
+o Added function num2deg() to convert numeric to degrees, the opposite of
+  deg2num().
 
-o gmt() is quiet=TRUE by default, and creates files .gmtcommands4 and
-  .gmtdefaults4 in dirname(file) instead of R working directory.
+o Changed gmt() so quiet=TRUE by default, and files .gmtcommands4 and
+  .gmtdefaults4 are created in dirname(file) instead of R working directory.
 
-o psxy(), pstext(), and psbar() save temporary GMT input files in directory
-  dirname(tempdir()) instead of R working directory. These temporary files are
-  later removed by psclose().
+o Changed psxy(), pstext(), and psbar() so temporary GMT input files are saved
+  directory dirname(tempdir()) instead of R working directory. These temporary
+  files are later removed by psclose().
 
-o psclose() moves the bounding box declaration to the postscript file header,
-  and removes GMT input files from temporary directory. If cleanup=TRUE, the
-  files .gmtcommands4 and .gmtdefaults4 are also removed.
+o Changed psclose() so the bounding box declaration is moved to the postscript
+  file header, and GMT input files are removed from temporary directory. If
+  cleanup=TRUE, the files .gmtcommands4 and .gmtdefaults4 are also removed.
 
-o r2gmt() reads correctly a table whose header starts with #.
+o Improved r2gmt() to support # commented table header.
 
-o example directory contains scripts (example.bat, example.sh) that mimic the
-  behaviour of the 'gmt' package, with the input files stored in a tmp
-  subdirectory.
+o Added scripts example.bat and example.sh that mimic the behaviour of the 'gmt'
+  package.
 
-o Main example and demo.* objects revised.
-
-o pscoast() example demonstrates how a map could be drawn without gmt() and
-  psclose().
-
-o gmt.system() example demonstrates how any GMT command can be run from R.
+o Improved help page examples.
 
 
 
@@ -56,10 +60,7 @@ o gmt.system() example demonstrates how any GMT command can be run from R.
 gmt 1.0-3
 18 Oct 2005
 --------------------------------------------------------------------------------
-o gmt-package.Rd gives an overview of the package. Other help pages revised.
-
-o gmt.system.Rd and r2gmt.Rd indicate that these functions are not really
-  intended for the end user.
+o Improved help pages.
 
 
 
@@ -68,8 +69,9 @@ o gmt.system.Rd and r2gmt.Rd indicate that these functions are not really
 gmt 1.0-2
 02 Oct 2005
 --------------------------------------------------------------------------------
-o gmt.system() handles the interface between R and system commands, passing
-  invisible=TRUE on operating systems that support that argument.
+o Added function gmt.system() to handle the interface between R and system
+  commands, passing invisible=TRUE on operating systems that support that
+  argument.
 
 
 
@@ -78,7 +80,7 @@ o gmt.system() handles the interface between R and system commands, passing
 gmt 1.0-1
 01 Oct 2005
 --------------------------------------------------------------------------------
-o Changed approach from shell("cmd>file") to
+o Improved performance by changing approach from shell("cmd>file") to
   ps<-system("cmd");writeLines(ps,file). Demo runs four times faster.
 
 
@@ -88,11 +90,7 @@ o Changed approach from shell("cmd>file") to
 gmt 1.0-0
 28 Sep 2005
 --------------------------------------------------------------------------------
-o man directory contains Rd documentation files.
-
-o root directory contains DESCRIPTION and INDEX.
-
-o inst directory contains CHANGES.
+o Added help pages for all functions.
 
 o Submitted to CRAN.
 
@@ -103,12 +101,14 @@ o Submitted to CRAN.
 gmt 0.9-1
 27 Sep 2005
 --------------------------------------------------------------------------------
-o psbar() supports 'ref' argument to standardize bar height.
+o Added argument 'ref' to psbar() to standardize bar height.
 
-o gmt() makes .gmthome(), gmtdefaults, and gmtset() obsolete. The package
-  assumes that binaries are in path and GMTHOME is defined.
+o Added function gmt() to initialize GMT session, making .gmthome(),
+  gmtdefaults, and gmtset() obsolete. The package assumes that binaries are in
+  the PATH and GMTHOME is defined.
 
-o r2gmt() makes .data2gmt() and .file2gmt() obsolete.
+o Added function r2gmt() to write GMT input files, making .data2gmt() and
+  .file2gmt() obsolete.
 
 
 
@@ -117,9 +117,8 @@ o r2gmt() makes .data2gmt() and .file2gmt() obsolete.
 gmt 0.9-0
 25 Sep 2005
 --------------------------------------------------------------------------------
-o R directory contains .data2gmt.R, .file2gmt.R, .gmthome.R, deg2num.R,
-  geodist.R, gmt.R, gmtdefaults.R, gmtset.R, psbar.R, psclose.R, pscoast.R,
-  pstext.R, and psxy.R.
+o Added functions .data2gmt(), .file2gmt(), .gmthome(), deg2num(), geodist(),
+  gmt(), gmtdefaults(), gmtset(), psbar(), psclose(), pscoast(), pstext(), and
+  psxy().
 
-o data directory contains demo.bar.R, demo.coast.R, demo.set.R, demo.text.R,
-  and demo.xy.R.
+o Added example objects demo.bar, demo.coast, demo.set, demo.text, and demo.xy.

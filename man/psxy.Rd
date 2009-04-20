@@ -2,8 +2,7 @@
 \alias{psxy}
 \title{Add Lines/Symbols to GMT Map}
 \description{
-  Call \acronym{GMT} to add lines/symbols to a map and save in
-  postscript format.
+  Call GMT to add lines/symbols to a map and save in postscript format.
 }
 \usage{
 psxy(x, cmd="-J -R -Scp -W2p -O -K", file=getOption("gmt.file"))
@@ -23,15 +22,15 @@ psxy(x, cmd="-J -R -Scp -W2p -O -K", file=getOption("gmt.file"))
   interpreted as header if the first non-whitespace character is not
   minus, point, or number.
 
-  See the \acronym{GMT} documentation for details on \command{psxy} and
-  other \acronym{GMT} commands.
+  See the GMT documentation for details on \command{psxy} and other GMT
+  commands.
 }
 \value{
   Null, but the map is annotated and saved in postscript format.
 
-  The temporary \acronym{GMT} input file \file{xy.gmt} is saved in
-  directory \code{dirname(tempdir())}, for the user to view or edit. It
-  is later removed by \code{psclose()}.
+  The temporary GMT input file \file{xy.gmt} is saved in directory
+  \code{dirname(tempdir())}, for the user to view or edit. It is later
+  removed by \code{psclose()}.
 }
 \author{Arni Magnusson \email{arnima@u.washington.edu}.}
 \seealso{

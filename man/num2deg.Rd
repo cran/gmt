@@ -23,8 +23,8 @@ num2deg(x, lat=NA, dec=FALSE, digits=0, zero=FALSE)
 }
 \value{deg:min:sec string representation of the number(s).}
 \note{
-  The string format is adopted from \cite{Appendix B.1.1} in the
-  \acronym{GMT} manual.
+  The string format is adopted from \cite{Appendix B.1.1} in the GMT
+  manual.
 }
 \author{Arni Magnusson \email{arnima@u.washington.edu}.}
 \seealso{

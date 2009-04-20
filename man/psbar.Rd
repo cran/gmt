@@ -2,7 +2,7 @@
 \alias{psbar}
 \title{Add Bars to GMT Mercator Map}
 \description{
-  Call \acronym{GMT} to add bars to a map and save in postscript format.
+  Call GMT to add bars to a map and save in postscript format.
 }
 \usage{
 psbar(x, cmd="-J -R -W1p -G180 -O -K", file=getOption("gmt.file"),
@@ -29,15 +29,15 @@ psbar(x, cmd="-J -R -W1p -G180 -O -K", file=getOption("gmt.file"),
 
   This function provides an alternative to \command{psxy -Sb} and
   \command{psxy -Sr} for drawing bars on a Mercator map. See the
-  \acronym{GMT} documentation for details on \command{psxy} and other
-  \acronym{GMT} commands.
+  GMT documentation for details on \command{psxy} and other GMT
+  commands.
 }
 \value{
   Null, but the map is annotated and saved in postscript format.
 
-  The temporary \acronym{GMT} input file \file{bar.gmt} is saved in
-  directory \code{dirname(tempdir())}, for the user to view or edit. It
-  is later removed by \code{psclose()}.
+  The temporary GMT input file \file{bar.gmt} is saved in directory
+  \code{dirname(tempdir())}, for the user to view or edit. It is later
+  removed by \code{psclose()}.
 }
 \note{
   This function does the necessary calculations to draw bars in standard

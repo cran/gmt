@@ -2,8 +2,8 @@
 \alias{pscoast}
 \title{Draw GMT Map}
 \description{
-  Call \acronym{GMT} to draw a map (coastlines, borders, rivers) and
-  save in postscript format.
+  Call GMT to draw a map (coastlines, borders, rivers) and save in
+  postscript format.
 }
 \usage{
 pscoast(cmd, file=getOption("gmt.file"))
@@ -20,8 +20,8 @@ pscoast(cmd, file=getOption("gmt.file"))
   File type should be \file{.eps} when \code{PAPER_MEDIA} is \code{A4+}
   or \code{letter+}, but \file{.ps} otherwise.
 
-  See the \acronym{GMT} documentation for details on \command{pscoast}
-  and other \acronym{GMT} commands.
+  See the GMT documentation for details on \command{pscoast} and other
+  GMT commands.
 }
 \value{
   Null, but a map is drawn and saved in postscript format.

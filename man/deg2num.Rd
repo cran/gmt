@@ -13,8 +13,8 @@ deg2num(x)
 }
 \value{Numeric representation of the degree string(s).}
 \note{
-  The string format is adopted from \cite{Appendix B.1.1} in the
-  \acronym{GMT} manual.
+  The string format is adopted from \cite{Appendix B.1.1} in the GMT
+  manual.
 }
 \author{Arni Magnusson \email{arnima@u.washington.edu}.}
 \seealso{

@@ -46,8 +46,8 @@ demo.bar
   }
 }
 \details{
-  See the \acronym{GMT} documentation for details on \command{psxy},
-  \command{pstext} and other \acronym{GMT} commands.
+  See the GMT documentation for details on \command{psxy},
+  \command{pstext} and other GMT commands.
 }
 \seealso{\code{\link{gmt-package}} gives an overview of the package.}
 \examples{

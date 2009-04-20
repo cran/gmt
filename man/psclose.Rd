@@ -2,7 +2,7 @@
 \alias{psclose}
 \title{Finalize GMT Map}
 \description{
-  Call \acronym{GMT} to finalize a map and save in postscript format.
+  Call GMT to finalize a map and save in postscript format.
 }
 \usage{
 psclose(file=getOption("gmt.file"), trailer=TRUE, cleanup=TRUE)
@@ -21,19 +21,16 @@ psclose(file=getOption("gmt.file"), trailer=TRUE, cleanup=TRUE)
 }
 \value{Null, but the map is finalized and saved in postscript format.}
 \note{
-  This function performs four tasks: (1) appends a closing trailer to
-  the postscript file [optional], (2) removes \acronym{GMT} files in
-  temporary directory, (3) removes \acronym{GMT} history files in map
-  directory [optional], and (4) moves the bounding box declaration to
-  the postsript file header.
-
-  \begin{enumerate}
-  aha
-  \end{enumerate}
-
-  This last enables
-  Ghostscript to distill a \acronym{PDF} map using the
-  \command{-dEPSCrop} method.
+  This function performs four tasks:
+  \enumerate{
+    \item Appends a closing trailer to the postscript file (optional).
+    \item Removes GMT files in temporary directory.
+    \item Removes GMT history files in map directory
+    (optional).
+    \item Moves the bounding box declaration to the postsript file
+    header, enabling Ghostscript to distill a PDF map using the
+    \option{-dEPSCrop} option.
+  }
 }
 \author{Arni Magnusson \email{arnima@u.washington.edu}.}
 \seealso{

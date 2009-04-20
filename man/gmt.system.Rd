@@ -19,7 +19,7 @@ gmt.system(cmd, file=NULL, append=FALSE)
   \code{system}, supporting redirection to file.
 
   It is mainly called by other functions, but users may find it useful
-  for running various \acronym{GMT} commands.
+  for running various GMT commands.
 }
 \author{Arni Magnusson \email{arnima@u.washington.edu}.}
 \seealso{

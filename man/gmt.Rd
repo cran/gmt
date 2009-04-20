@@ -2,18 +2,18 @@
 \alias{gmt}
 \title{Initialize GMT Session}
 \description{
-  Initialize a \acronym{GMT} session by setting graphical parameters and
-  current postscript file.
+  Initialize a GMT session by setting graphical parameters and current
+  postscript file.
 }
 \usage{
 gmt(par=NULL, file="map.eps", style="s", quiet=TRUE)
 }
 \arguments{
-  \item{par}{optional string of \acronym{GMT} parameters,
+  \item{par}{optional string of GMT parameters,
     \code{"PARAMETER1=value1 PARAMETER2=value2 ..."}, passed to
     \command{gmtset}.}
   \item{file}{postscript filename used in subsequent calls to
-    \acronym{GMT} plot functions, passed to \code{options()}}
+    GMT plot functions, passed to \code{options()}}
   \item{style}{default units and values: \code{"s"} for SI
     (international) or \code{"u"} for United States, passed to
     \command{gmtdefaults}.}
@@ -27,16 +27,14 @@ gmt(par=NULL, file="map.eps", style="s", quiet=TRUE)
   File type should be \file{.eps} when \code{PAPER_MEDIA} is \code{A4+}
   or \code{letter+}, but \file{.ps} otherwise.
 
-  See the \acronym{GMT} documentation for details on graphical
-  parameters, \command{gmtdefaults}, \command{gmtset} and other
-  \acronym{GMT} commands.
+  See the GMT documentation for details on graphical parameters,
+  \command{gmtdefaults}, \command{gmtset} and other GMT commands.
 }
 \value{
   List containing the current \code{options("gmt.file")}.
 
-  If \code{par} is \code{NULL}, no \acronym{GMT} parameters are changed,
-  but the current parameter values and postscript filename can be
-  reviewed.
+  If \code{par} is \code{NULL}, no GMT parameters are changed, but the
+  current parameter values and postscript filename can be reviewed.
 
   If \code{par} is a string (empty \code{""} will do), a file named
   \file{.gmtdefaults4} is created in the current map directory,
