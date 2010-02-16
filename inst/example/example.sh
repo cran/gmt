@@ -1,3 +1,5 @@
+#!/bin/bash
+
 file=map.eps
 gmtdefaults -Ds > .gmtdefaults4
 gmtset DEGREE_SYMBOL degree PAGE_ORIENTATION portrait PLOT_DEGREE_FORMAT F

@@ -21,7 +21,6 @@ gmt.system(cmd, file=NULL, append=FALSE)
   It is mainly called by other functions, but users may find it useful
   for running various GMT commands.
 }
-\author{Arni Magnusson \email{arnima@u.washington.edu}.}
 \seealso{
   \code{\link{system}}, \code{\link{writeLines}}.
 

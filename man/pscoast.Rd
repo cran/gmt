@@ -30,7 +30,6 @@ pscoast(cmd, file=getOption("gmt.file"))
   directory, \code{dirname(file)}. It can be removed later using
   \code{psclose()}.
 }
-\author{Arni Magnusson \email{arnima@u.washington.edu}.}
 \seealso{
   Similar to \code{\link{plot}} and \code{\link{postscript}} in native
   \R graphics.

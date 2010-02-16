@@ -1,5 +1,4 @@
-`num2deg` <-
-function(x, lat=NA, dec=FALSE, digits=0, zero=FALSE)
+num2deg <- function(x, lat=NA, dec=FALSE, digits=0, zero=FALSE)
 {
   if (length(x) > 1)
     mapply(num2deg, x, lat=lat, dec=dec, digits=digits, zero=zero)  # recursion supports element-specific format
@@ -45,4 +44,3 @@ function(x, lat=NA, dec=FALSE, digits=0, zero=FALSE)
     return(deg)
   }
 }
-

@@ -32,7 +32,6 @@ psxy(x, cmd="-J -R -Scp -W2p -O -K", file=getOption("gmt.file"))
   \code{dirname(tempdir())}, for the user to view or edit. It is later
   removed by \code{psclose()}.
 }
-\author{Arni Magnusson \email{arnima@u.washington.edu}.}
 \seealso{
   Similar to \code{\link{points}}, \code{\link{lines}}, and
   \code{\link{postscript}} in native \R graphics.

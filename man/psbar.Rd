@@ -60,7 +60,6 @@ psbar(x, cmd="-J -R -W1p -G180 -O -K", file=getOption("gmt.file"),
   \eqn{\theta_{\mathrm{ref}}}{ref} is a reference latitude where
   \eqn{h\!=\!1}{h=1} renders a bar 1 degree high.
 }
-\author{Arni Magnusson \email{arnima@u.washington.edu}.}
 \seealso{
   Similar to \code{\link{barplot}} and \code{\link{postscript}} in
   native \R graphics.

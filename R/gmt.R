@@ -1,5 +1,4 @@
-`gmt` <-
-function(par=NULL, file="map.eps", style="s", quiet=TRUE)
+gmt <- function(par=NULL, file="map.eps", style="s", quiet=TRUE)
 {
   owd <- setwd(dirname(file)); on.exit(setwd(owd))
 
@@ -20,4 +19,3 @@ function(par=NULL, file="map.eps", style="s", quiet=TRUE)
 
   invisible(options("gmt.file"))
 }
-

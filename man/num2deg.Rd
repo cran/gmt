@@ -26,7 +26,6 @@ num2deg(x, lat=NA, dec=FALSE, digits=0, zero=FALSE)
   The string format is adopted from \cite{Appendix B.1.1} in the GMT
   manual.
 }
-\author{Arni Magnusson \email{arnima@u.washington.edu}.}
 \seealso{
   \code{\link{as.character}} converts plain numbers to strings.
 

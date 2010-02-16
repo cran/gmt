@@ -1,5 +1,4 @@
-`gmt.system` <-
-function(cmd, file=NULL, append=FALSE)
+gmt.system <- function(cmd, file=NULL, append=FALSE)
 {
   output <- system(cmd, intern=TRUE)
   open <- if(append) "a" else "w"  # append or write
@@ -13,4 +12,3 @@ function(cmd, file=NULL, append=FALSE)
 
   invisible(output)
 }
-

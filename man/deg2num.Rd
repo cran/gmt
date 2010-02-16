@@ -16,7 +16,6 @@ deg2num(x)
   The string format is adopted from \cite{Appendix B.1.1} in the GMT
   manual.
 }
-\author{Arni Magnusson \email{arnima@u.washington.edu}.}
 \seealso{
   \code{\link{as.numeric}} converts strings to numbers when things are
   straightforward.

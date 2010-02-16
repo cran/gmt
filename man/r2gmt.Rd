@@ -30,7 +30,6 @@ r2gmt(x, datafile, append=FALSE)
   It is mainly called by other functions, but users may find it useful
   for writing input data for GMT commands.
 }
-\author{Arni Magnusson \email{arnima@u.washington.edu}.}
 \seealso{
   \code{\link{scan}}, \code{\link{read.table}}, \code{\link{write}},
   \code{\link{write.table}}.

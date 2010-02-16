@@ -1,5 +1,4 @@
-`deg2num` <-
-function(x)
+deg2num <- function(x)
 {
   is.digit <- function(x)
     suppressWarnings(!is.na(as.numeric(x)))
@@ -41,4 +40,3 @@ function(x)
     return(value)
   }
 }
-

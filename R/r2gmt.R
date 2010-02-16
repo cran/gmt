@@ -1,5 +1,4 @@
-`r2gmt` <-
-function(x, datafile, append=FALSE)
+r2gmt <- function(x, datafile, append=FALSE)
 {
   is.digit <- function(x) suppressWarnings(!is.na(as.numeric(x)))
 
@@ -19,4 +18,3 @@ function(x, datafile, append=FALSE)
 
   invisible(x)
 }
-

@@ -40,7 +40,6 @@ gmt(par=NULL, file="map.eps", style="s", quiet=TRUE)
   \file{.gmtdefaults4} is created in the current map directory,
   \code{dirname(file)}. It can be removed later using \code{psclose()}.
 }
-\author{Arni Magnusson \email{arnima@u.washington.edu}.}
 \seealso{
   \code{\link{options}} could be used to set \code{gmt.file} directly.
 

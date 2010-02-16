@@ -49,7 +49,7 @@
   subsets and summaries of geographic data, while performing statistical
   analysis in the \R console.
 }
-\author{Arni Magnusson \email{arnima@u.washington.edu}.}
+\author{Arni Magnusson.}
 \references{
   Wessel, P. and W.H.F. Smith. \cite{The Generic Mapping Tools:
     Technical reference and cookbook.} Available at

@@ -32,7 +32,6 @@ psclose(file=getOption("gmt.file"), trailer=TRUE, cleanup=TRUE)
     \option{-dEPSCrop} option.
   }
 }
-\author{Arni Magnusson \email{arnima@u.washington.edu}.}
 \seealso{
   Similar to \code{\link{dev.off}} and \code{\link{postscript}} in
   native \R graphics.

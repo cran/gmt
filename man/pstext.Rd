@@ -32,7 +32,6 @@ pstext(x, cmd="-J -R -O -K", file=getOption("gmt.file"))
   \code{dirname(tempdir())}, for the user to view or edit. It is later
   removed by \code{psclose()}.
 }
-\author{Arni Magnusson \email{arnima@u.washington.edu}.}
 \seealso{
   Similar to \code{\link{text}} and \code{\link{postscript}} in native
   \R graphics.

@@ -1,5 +1,4 @@
-`geodist` <-
-function(Nfrom, Efrom, Nto, Eto, units="km")
+geodist <- function(Nfrom, Efrom, Nto, Eto, units="km")
 {
   units <- match.arg(units, c("km","nm"))
 
@@ -13,7 +12,7 @@ function(Nfrom, Efrom, Nto, Eto, units="km")
   duplicates <- N1==N2 & E1==E2
   N1[duplicates] <- 0            # When origin and destination are the same,
   E1[duplicates] <- 0            #   set them both to 0, 0
-  N2[duplicates] <- 0            # Without this, geodist(48.535, 48.535, 124, 124) returns NaN,
+  N2[duplicates] <- 0            # Without this, geodist(48.535, 124, 48.535, 124) returns NaN,
   E2[duplicates] <- 0            #   but geodist(0, 0, 0, 0) seems to return 0 on all machines
 
   radians <- acos(sin(N1)*sin(N2)+cos(N1)*cos(N2)*cos(E1-E2))
@@ -25,4 +24,3 @@ function(Nfrom, Efrom, Nto, Eto, units="km")
 
   return(distance)
 }
-

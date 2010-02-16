@@ -34,7 +34,6 @@ geodist(Nfrom, Efrom, Nto, Eto, units="km")
   The calculations assume a perfect sphere and elevation differences are
   ignored. The SI definition of a nautical mile is exactly 1.852 km.
 }
-\author{Arni Magnusson \email{arnima@u.washington.edu}.}
 \seealso{
   \code{\link{diff}}, \code{\link{Trig}}.
 
