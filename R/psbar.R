@@ -14,7 +14,7 @@ psbar <- function(x, cmd="-J -R -W1p -G180 -O -K", file=getOption("gmt.file"), r
 
   ## 1 Parse user data
   tmp <- paste(dirname(tempdir()), "bar.gmt", sep="/")
-  x.matrix <- as.matrix(r2gmt(x,tmp))  # unlike psxy and pstext, we can't work blindly with a data file, so read and parse
+  x.matrix <- as.matrix(r2gmt(x,tmp))  # unlike psxy and pstext, we can't work blindly with data file, so read and parse
   lon <- deg2num(x.matrix[,1])   # longitude at bar center
   lat <- deg2num(x.matrix[,2])   # latitude at bar base
   w   <- x.matrix[,3]            # bar width in degrees

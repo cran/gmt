@@ -25,7 +25,7 @@ psclose <- function(file=getOption("gmt.file"), trailer=TRUE, cleanup=TRUE)
   if(length(bb)==2 && ps[bb[1]]=="%%BoundingBox: (atend)")  # if they are two and first is empty, move bottom to top
   {
     ps[bb[1]] <- ps[bb[2]]
-    write(ps[-bb[2]], file)  # remove bottom-bb line after copying to top (leaving file 1 line shorter) like epstool does
+    write(ps[-bb[2]], file)  # remove bottom-bb line after copying to top (leaving file 1 line shorter) like epstool
   }
 
   invisible(NULL)
