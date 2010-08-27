@@ -42,7 +42,7 @@ psbar <- function(x, cmd="-J -R -W1p -G180 -O -K", file=getOption("gmt.file"), r
   ## 3 Write bar coordinates into multisegment file and add bars to map
   file.create(tmp)  # overwrite previous tmp
   apply(bar.frame, 1, write.each.bar, tmp=tmp)
-  safe.cmd <- paste(cmd, "-A -M")  # ensure lines are straight and multiple-file is expected
+  safe.cmd <- paste(cmd, "-A -m")  # ensure lines are straight and multiple-file is expected
   gmt.system(paste("psxy",tmp,safe.cmd), file=file, append=TRUE)
 
   invisible(NULL)

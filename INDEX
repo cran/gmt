@@ -1,9 +1,0 @@
-deg2num                 Convert degrees to numeric
-geodist                 Distance between geographic coordinates
-gmt                     Initialize GMT session
-num2deg                 Convert numeric to degrees
-psbar                   Add bars to GMT Mercator map
-psclose                 Finalize GMT map
-pscoast                 Draw GMT map
-pstext                  Add text/symbols to GMT map
-psxy                    Add lines/symbols to GMT map
