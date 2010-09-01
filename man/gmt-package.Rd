@@ -53,7 +53,7 @@
 \references{
   Wessel, P. and W.H.F. Smith. \cite{The Generic Mapping Tools:
     Technical reference and cookbook.} Available at
-  http://gmt.soest.hawaii.edu/gmt/doc/gmt/pdf/GMT\eqn{\_}{_}Docs.pdf.
+  \url{http://gmt.soest.hawaii.edu/gmt/doc/gmt/pdf/GMT_Docs.pdf}.
 }
 \seealso{
   Other packages that can be used to draw maps include: \pkg{GRASS},
