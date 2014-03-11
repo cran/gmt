@@ -1,5 +1,3 @@
-# Default NAMESPACE created by R
-# Remove the previous line if you edit this file
-
-# Export all names
-exportPattern(".")
+export(deg2num, geodist, num2deg)
+export(gmt, gmt.system, r2gmt)
+export(psbar, psclose, pscoast, pstext, psxy)

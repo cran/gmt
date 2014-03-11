@@ -52,6 +52,12 @@ pstext(demo.text)
 psbar(demo.bar, ref=66)
 psclose()
 # See directory gmt/example for details
+
+# Simple map and circles
+gmt("PAPER_MEDIA a4+")
+pscoast("-JM12c -R158/192/-42/-8 -Di -Gdarkgreen -B10f5 -A2000 -K", "quake.eps")
+psxy(data.frame(lon=quakes$lon, lat=quakes$lat, mag=10^quakes$mag/1e6),
+     "-J -R -Scp -W0.5p,red -O", "quake.eps")
 }
 }
 % Graphics

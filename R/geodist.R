@@ -17,10 +17,7 @@ geodist <- function(Nfrom, Efrom, Nto, Eto, units="km")
 
   radians <- acos(sin(N1)*sin(N2)+cos(N1)*cos(N2)*cos(E1-E2))
 
-  if(units == "km")
-    distance <- 60 * rad * radians * 1.852
-  else
-    distance <- 60 * rad * radians
+  distance <- if(units=="km") 60*rad*radians*1.852 else 60*rad*radians
 
   return(distance)
 }

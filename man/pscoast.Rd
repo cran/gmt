@@ -51,7 +51,7 @@ psbar(demo.bar, ref=66)
 psclose()
 # See directory gmt/example for details
 
-# Map in one call, PS or EPS, leaves .gmtcommands4 in working directory
+# Map in one call
 pscoast("-JM12c -R7E/38E/29N/48N -G100 -B5", "x.ps")
 }
 }
