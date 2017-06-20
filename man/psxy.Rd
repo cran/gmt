@@ -10,7 +10,8 @@ psxy(x, cmd="-J -R -Scp -W2p -O -K", file=getOption("gmt.file"))
 \arguments{
   \item{x}{data frame, matrix, or filename containing the data to be
     plotted.}
-  \item{cmd}{string of arguments passed to \command{psxy}.}
+  \item{cmd}{string of arguments passed to GMT shell command
+    \command{psxy}.}
   \item{file}{filename where the map is saved.}
 }
 \details{
@@ -26,7 +27,7 @@ psxy(x, cmd="-J -R -Scp -W2p -O -K", file=getOption("gmt.file"))
   commands.
 }
 \value{
-  Null, but the map is annotated and saved in postscript format.
+  \code{NULL}, but the map is annotated and saved in postscript format.
 
   The temporary GMT input file \file{xy.gmt} is saved in directory
   \code{dirname(tempdir())}, for the user to view or edit. It is later
@@ -44,25 +45,18 @@ psxy(x, cmd="-J -R -Scp -W2p -O -K", file=getOption("gmt.file"))
 }
 \examples{
 \dontrun{
-# Draw map and save as "map.eps" in current working directory
+# Draw map and save as "map.ps" in current working directory
 gmt(demo.par)
 pscoast(demo.coast)
 psxy(demo.xy)
-pstext(demo.text)
+pstext(demo.text, "-J -R -F+f+a+j -O -K")
 psbar(demo.bar, ref=66)
 psclose()
 # See directory gmt/example for details
 
 # Simple map and circles
-gmt("PAPER_MEDIA a4+")
-pscoast("-JM12c -R158/192/-42/-8 -Di -Gdarkgreen -B10f5 -A2000 -K", "quake.eps")
+pscoast("-JM12c -R158/192/-42/-8 -Di -Gdarkgreen -B10f5 -A2000 -K", "quake.ps")
 psxy(data.frame(lon=quakes$lon, lat=quakes$lat, mag=10^quakes$mag/1e6),
-     "-J -R -Scp -W0.5p,red -O", "quake.eps")
+     "-J -R -Scp -W0.5p,red -O", "quake.ps")
 }
 }
-% Graphics
-\keyword{aplot}
-% Programming
-\keyword{interface}
-% MASS
-\keyword{spatial}

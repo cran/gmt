@@ -1,3 +1,4 @@
+\encoding{UTF-8}
 \name{geodist}
 \alias{geodist}
 \title{Distance Between Geographic Coordinates}
@@ -15,7 +16,7 @@ geodist(Nfrom, Efrom, Nto, Eto, units="km")
 }
 \details{
   Latitude and longitude are passed as decimal numbers, e.g. 66.5 for
-  66\eqn{^{\circ}}{°}30\eqn{'}N. Vectors of coordinates are supported.
+  66\eqn{^{\circ}}{Â°}30\eqn{'}N. Vectors of coordinates are supported.
 }
 \value{Vector of distances.}
 \note{
@@ -43,8 +44,3 @@ geodist(Nfrom, Efrom, Nto, Eto, units="km")
 geodist(55.75,37.63, 39.9,116.4)  # Moscow - Beijing
 geodist(90,0, -90,0, "nm")        # from pole to pole
 }
-% Mathematics
-\keyword{math}
-% MASS
-\keyword{spatial}
-\encoding{latin1}

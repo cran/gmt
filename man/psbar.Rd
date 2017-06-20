@@ -11,7 +11,8 @@ psbar(x, cmd="-J -R -W1p -G180 -O -K", file=getOption("gmt.file"),
 \arguments{
   \item{x}{data frame, matrix, or filename containing the data to be
     plotted.}
-  \item{cmd}{string of arguments passed to \command{psxy}.}
+  \item{cmd}{string of arguments passed to GMT shell command
+    \command{psxy}.}
   \item{file}{filename where the map is saved.}
   \item{ref}{reference latitude where height 1 renders a bar 1 degree
     high.}
@@ -72,19 +73,13 @@ psbar(x, cmd="-J -R -W1p -G180 -O -K", file=getOption("gmt.file"),
 }
 \examples{
 \dontrun{
-# Draw map and save as "map.eps" in R working directory
+# Draw map and save as "map.ps" in R working directory
 gmt(demo.par)
 pscoast(demo.coast)
 psxy(demo.xy)
-pstext(demo.text)
+pstext(demo.text, "-J -R -F+f+a+j -O -K")
 psbar(demo.bar, ref=66)
 psclose()
 # See directory gmt/example for details
 }
 }
-% Graphics
-\keyword{aplot}
-% Programming
-\keyword{interface}
-% MASS
-\keyword{spatial}
