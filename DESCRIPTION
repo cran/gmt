@@ -1,6 +1,6 @@
 Package: gmt
-Version: 2.0.2
-Date: 2020-11-23
+Version: 2.0.3
+Date: 2022-06-06
 Title: Interface Between GMT Map-Making Software and R
 Authors@R: c(person("Arni", "Magnusson", role=c("aut","cre"), email="thisisarni@gmail.com"))
 Imports: utils
@@ -14,8 +14,8 @@ Description: Interface between the GMT map-making software and R, enabling the
 License: GPL-3
 URL: https://www.generic-mapping-tools.org
 NeedsCompilation: no
-Packaged: 2020-11-23 12:50:33 UTC; arnima
+Packaged: 2022-06-06 04:56:58 UTC; arnim
 Author: Arni Magnusson [aut, cre]
 Maintainer: Arni Magnusson <thisisarni@gmail.com>
 Repository: CRAN
-Date/Publication: 2020-11-23 16:10:07 UTC
+Date/Publication: 2022-06-06 20:10:08 UTC

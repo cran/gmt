@@ -1,2 +1,0 @@
-demo.par <-
-"MAP_DEGREE_SYMBOL degree PS_PAGE_ORIENTATION portrait FORMAT_GEO_MAP F"
